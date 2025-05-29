@@ -1,15 +1,47 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner sc = new Scanner(System.in);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        System.out.print("Ingrese saldo inicial: ");
+        float saldoInicial = sc.nextFloat();
+        System.out.print("Ingrese tasa anual (%): ");
+        float tasaAnual = sc.nextFloat();
+
+        JP_CuentaDeAhorros cuenta = new JP_CuentaDeAhorros(saldoInicial, tasaAnual);
+
+        int opcion;
+        do {
+            System.out.println("\n--- Menú de Cuenta de Ahorros ---");
+            System.out.println("1. Depositar");
+            System.out.println("2. Retirar");
+            System.out.println("3. Imprimir estado");
+            System.out.println("4. Salir");
+            System.out.print("Seleccione una opción: ");
+            opcion = sc.nextInt();
+
+            switch (opcion) {
+                case 1 -> {
+                    System.out.print("Cantidad a depositar: ");
+                    float dep = sc.nextFloat();
+                    cuenta.depositar(dep);
+                }
+                case 2 -> {
+                    System.out.print("Cantidad a retirar: ");
+                    float ret = sc.nextFloat();
+                    cuenta.retirar(ret);
+                }
+                case 3 -> cuenta.imprimir();
+                case 4 -> System.out.println("Saliendo del sistema...");
+                default -> System.out.println("Opción inválida.");
+            }
+
+        } while (opcion != 4);
+
+        sc.close();
     }
 }
+
