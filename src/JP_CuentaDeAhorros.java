@@ -5,12 +5,12 @@ public class JP_CuentaDeAhorros extends JP_Cuenta {
 
     public JP_CuentaDeAhorros(float saldoInicial, float tasaAnual) {
         super(saldoInicial, tasaAnual);
-        this.activa = saldoInicial >= 100;
+        this.activa = saldoInicial >= 10;
     }
 
     @Override
     public void depositar(float cantidad) {
-        if (!activa && (saldo + cantidad) >= 100) {
+        if (!activa && (saldo + cantidad) >= 10) {
             activa = true;
             System.out.println("La cuenta ahora está activa.");
         }
@@ -21,7 +21,7 @@ public class JP_CuentaDeAhorros extends JP_Cuenta {
     public void retirar(float cantidad) {
         if (activa) {
             super.retirar(cantidad);
-            if (saldo < 100) {
+            if (saldo < 10) {
                 activa = false;
                 System.out.println("La cuenta ahora está inactiva.");
             }

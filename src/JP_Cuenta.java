@@ -9,8 +9,7 @@ public class JP_Cuenta {
     public JP_Cuenta(float saldoInicial,  float tasaAnual) {
         this.saldo = saldoInicial;
         this.tasaAnual = tasaAnual;
-        //this.numeroDepositos = numeroDepositos;
-        //this.numeroRetiros = numeroRetiros;
+
     }
 
     public void depositar(float cantidad) {
