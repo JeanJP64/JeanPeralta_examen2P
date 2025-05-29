@@ -16,11 +16,12 @@ public class Main {
         int opcion;
         do {
             System.out.println("\n--- Menú de Cuenta de Ahorros ---");
+            System.out.print("Seleccione una opción: \n");
             System.out.println("1. Depositar");
             System.out.println("2. Retirar");
             System.out.println("3. Imprimir estado");
             System.out.println("4. Salir");
-            System.out.print("Seleccione una opción: ");
+
             opcion = sc.nextInt();
 
             switch (opcion) {

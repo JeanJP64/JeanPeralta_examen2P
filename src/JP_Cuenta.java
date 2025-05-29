@@ -1,12 +1,12 @@
 
 
 public class JP_Cuenta {
-    public float saldo;
-    public int numeroDepositos = 0;
-    public int numeroRetiros = 0;
-    public float tasaAnual;
+    protected float saldo;
+    protected int numeroDepositos = 0;
+    protected int numeroRetiros = 0;
+    protected float tasaAnual;
 
-    public JP_Cuenta(float saldoInicial,  float tasaAnual) {
+    public JP_Cuenta(float saldoInicial, float tasaAnual) {
         this.saldo = saldoInicial;
         this.tasaAnual = tasaAnual;
 
